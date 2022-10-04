@@ -1,0 +1,30 @@
+<label>Server name</label>
+<br />
+<!-- event data binding example, returns output from the event ex: (click).-->
+<!-- ($event) access the event data -->
+<!-- <input type="text" class="form control" (input)="onUpdateServerName($event)" /> -->
+<br />
+<br />
+<!-- Two way data binding example, add [{ngModel}]="" -->
+<input type="text" class="form control" [(ngModel)]="serverName" />
+<br />
+<!-- <p>{{ serverName }}</p> -->
+<br />
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<p *ngIf="servercreated">
+  The server was creatd and the server name is{{ serverName }}
+</p>
+<!--property binding exapmle -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+
+<!--can't use string interpolation inside another expresion like property binding exapmle shown below -->
+<!-- this only output the data -->
+
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<app-server></app-server>
